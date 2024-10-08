@@ -16,7 +16,7 @@ connectDB();
 
 // CORS
 const corsOptions = {
-  origin: 'https://pixterest.onrender.com/',
+  origin: 'https://pixterest.onrender.com',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
@@ -25,7 +25,6 @@ const corsOptions = {
 // Middleware
 app.use(cors(corsOptions));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
 // Session setup
 app.use(session({
@@ -51,13 +50,13 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('*', (req, res) => {
-  res.send('Pixterest')
-});
-
 app.use('/api/sign-up', require('./routes/signUp'));
 app.use('/api/sign-in', require('./routes/signIn'));
 app.use('/api/user', require('./routes/user'));
+
+app.get('*', (req, res) => {
+  res.send('Pixterest')
+});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
