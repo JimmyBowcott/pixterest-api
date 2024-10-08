@@ -50,6 +50,7 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use('/api/wake-up', require('./routes/wakeUp'));
 app.use('/api/sign-up', require('./routes/signUp'));
 app.use('/api/sign-in', require('./routes/signIn'));
 app.use('/api/user', require('./routes/user'));
