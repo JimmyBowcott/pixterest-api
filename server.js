@@ -16,7 +16,7 @@ connectDB();
 
 // CORS
 const corsOptions = {
-  origin: 'https://pixterest.onrender.com',
+  origin: ['https://pixterest.onrender.com', 'https://jimmybowcott.github.io', 'https://jimmybowcott.github.io/pixterest'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
