@@ -16,7 +16,7 @@ connectDB();
 
 // CORS
 const corsOptions = {
-  origin: ['http://localhost:5173', 'https://localhost:5173', 'https://localhost:3000', 'http://localhost:3000', 'https://pixterest.onrender.com/'],
+  origin: 'https://pixterest.onrender.com/',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
@@ -52,7 +52,7 @@ app.use((req, res, next) => {
 });
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
+  res.send('Pixterest')
 });
 
 app.use('/api/sign-up', require('./routes/signUp'));
