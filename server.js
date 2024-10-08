@@ -16,7 +16,7 @@ connectDB();
 
 // CORS
 const corsOptions = {
-  origin: ['http://localhost:5173', 'https://localhost:5173', 'https://localhost:3000', 'http://localhost:3000', 'https://pixterest.netlify.app/', '*'],
+  origin: ['http://localhost:5173', 'https://localhost:5173', 'https://localhost:3000', 'http://localhost:3000', 'https://pixterest.onrender.com/'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
